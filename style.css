@@ -1,0 +1,417 @@
+/* Table of contents
+
+1. RESET
+
+2. GLOBAL STYLES
+
+3. SIDE MENU
+
+4. HEADER
+    3.1. Title H1
+    3.2. Hero Button
+
+5. DESTINATIONS SECTION
+
+
+5. FOOTER      
+
+6. MEDIA QUERIES
+
+*/
+
+
+/*********** RESET ***********/
+
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+/*********** GLOBAL STYLES ***********/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #EDE7E3;
+  color: #353535;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2, 
+h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: #fff;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #16697A;
+  text-align: center;
+
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/*********** SIDE MENU ***********/
+.side-menu {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: rgb(250, 235, 215);
+  text-align: center;
+  padding-top: 7em;
+  z-index: 10;
+  display: none;
+}
+
+
+
+.close-icon {
+  width: 10%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  filter: opacity(20%);
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  transform: scale(.9);
+  filter: opacity(30%);
+}
+
+.side-item + .side-item {
+  margin-top: 2em;
+
+}
+
+.side-link {
+  color: #16697A;
+}
+
+.side-link:hover,
+.side-link:focus {
+  font-weight: 700;
+}
+
+
+
+/*********** HEADER ***********/
+
+header {
+  background-image: url(../images/home/hero-img.jpg);
+  background-size: cover;
+  background-position: center center;
+  padding: 3em 0 3em 0;
+}
+
+header .row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top {
+  margin-bottom: 6em;
+}
+
+.burger-button {
+  cursor: pointer;
+  width: 10%;
+  max-width: 30px;
+  filter: saturate(150%);
+}
+
+.burger-button:hover {
+  filter: brightness(.8) saturate(300%);
+}
+
+
+
+.logo {
+  width: 12%;
+  transform: translateY(-1px);
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 100px;
+}
+
+.nav {
+  transform: translateY(-2px);
+  
+}
+
+
+.nav-item {
+  padding: 0;
+}
+
+.nav-item + .nav-item {
+  margin-left: 2em;
+}
+
+.nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #FFA62B;
+}
+
+/* Title H1 */
+h1 {
+  margin-bottom: 1.2em;
+}
+
+h1 > span {
+  color: #C1E0E6;
+  display: block;
+}
+
+/* Hero Button */
+
+.hero-btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #FFA62B;
+  padding: 1.6em 2em 1.6em 2em;
+  margin-bottom: 4em;
+  transition: all 0.5s ease;
+
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  transform: scale(.95);
+  background-color: #ee9b27;
+}
+
+.hero-link {
+  color: #fff;
+  font-weight: 900;
+
+}
+
+
+
+
+/*********** DESTINATION SECTION ***********/
+
+.destinations {
+  padding: 8em 0;
+}
+
+.destinations-title {
+  margin-bottom: 1em;
+}
+
+.destinations-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: .8rem;
+}
+
+.destinations-item {
+  background-color: olive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  transition: all 0.5s;
+}
+
+.destinations-item:hover {
+  transform: scale(1.05);
+}
+
+.destinations-item-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.4rem;
+  transition: all 0.5s;
+}
+
+.destinations-item:hover .destinations-item-title {
+  opacity: .6;
+}
+
+/* Making perfect square blocks */
+.destinations-item:before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+.australia {
+  background-image: url(../images/home/australia.jpg);
+}
+.canada {
+  background-image: url(../images/home/canada.jpg);
+}
+.europe {
+  background-image: url(../images/home/europe.jpg);
+}
+.caribbean {
+  background-image: url(../images/home/caribbean.jpg);
+}
+.alaska {
+  background-image: url(../images/home/alaska.jpg);
+}
+.africa {
+  background-image: url(../images/home/africa.jpg);
+}
+.transatlantic {
+  background-image: url(../images/home/transatlantic.jpg);
+}
+.asia {
+  background-image: url(../images/home/asia.jpg);
+}
+.norway {
+  background-image: url(../images/home/norway.jpg);
+}
+
+
+
+/*********** FOOTER ***********/
+
+footer {
+  background-color: #16697A;
+  color: rgba(255, 255, 255, 0.822);
+  font-weight: 300;
+  padding: 6em 0 3em 0;
+}
+
+.footer-lists {
+  align-items: flex-start;
+  margin-bottom: 8em;
+}
+
+.footer-list-title {
+  font-weight: 300;
+  margin-bottom: 2em;
+}
+
+.footer-link + .footer-link {
+  margin-top: 1em;
+}
+
+.footer-link {
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  transform: scale(1.05);
+}
+
+.footer-link a {
+  color: rgba(255, 255, 255, 0.7);
+  
+}
+
+.footer-link a:hover {
+  color: #fff;
+
+}
+
+footer .logo-img {
+  margin: 0 auto;
+  margin-bottom: 4em;
+}
+
+.footer-social {
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+.social-link {
+  width: 20%;
+  max-width: 30px;
+  transition: all 0.2s;
+}
+
+.social-link:hover,
+.social-link:focus {
+  transform: scale(1.19);
+  /* mix-blend-mode: screen; */
+  filter: brightness(1.2);
+}
+
+.social-link + .social-link {
+  margin-left: 1em;
+}
+
+.copyright {
+  opacity: .6;
+}
+
+.copyright-text {
+  text-align: center;
+}
+
+
+
+/*********** MEDIA QUERIES ***********/
+
+/* Header */
+
+@media (max-width: 950px) {
+  .nav-link {
+    font-size: .8rem;
+  }
+
+  .burger-button {
+    cursor: pointer;
+    width: 10%;
+    max-width: 20px;
+  }
+  
+  .logo-img {
+    max-width: 80px;
+  }
+}

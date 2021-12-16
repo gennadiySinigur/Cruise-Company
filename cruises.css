@@ -1,0 +1,508 @@
+/* Table of contents
+
+1. RESET
+
+2. GLOBAL STYLES
+
+3. HEADER
+
+4. CRUISE CARDS
+    4.1. Search and filter fields
+    4.2. Cruise cards list
+    4.3. Cruise card
+      4.3.1. Button
+      4.3.2. Pagination
+
+5. FOOTER      
+
+6. MEDIA QUERIES
+
+*/
+
+
+
+/*********** RESET ***********/
+
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*********** GLOBAL STYLES ***********/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #EDE7E3;
+  color: #353535;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2, 
+h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #16697A;
+  text-align: center;
+
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/*********** SIDE MENU ***********/
+.side-menu {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: rgb(250, 235, 215);
+  text-align: center;
+  padding-top: 7em;
+  z-index: 10;
+  display: none;
+}
+
+
+
+.close-icon {
+  width: 10%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  filter: opacity(20%);
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  transform: scale(.9);
+  filter: opacity(30%);
+}
+
+.side-item + .side-item {
+  margin-top: 2em;
+
+}
+
+.side-link {
+  color: #16697A;
+}
+
+.side-link:hover,
+.side-link:focus {
+  font-weight: 700;
+}
+
+
+
+
+/*********** HEADER ***********/
+
+header {
+  background-image: url(../images/header.jpg);
+  background-size: cover;
+  background-position: center center;
+  padding: 3em 0;
+}
+
+header .row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger-button {
+  cursor: pointer;
+  width: 10%;
+  max-width: 30px;
+  filter: saturate(150%);
+}
+
+.burger-button:hover {
+  filter: brightness(.8) saturate(300%);
+}
+
+
+
+.logo {
+  width: 12%;
+  transform: translateY(-1px);
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 100px;
+}
+
+.nav {
+  transform: translateY(-2px);
+}
+
+
+.nav-item {
+  padding: 0;
+}
+
+.nav-item + .nav-item {
+  margin-left: 2em;
+}
+
+.nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #FFA62B;
+}
+
+
+/*********** CRUISE CARDS ***********/
+
+.cruise-cards {
+  padding: 4em 0;
+}
+
+
+/* search and filter fields */
+
+.search-field {
+  justify-content: flex-start;
+  margin-bottom: 4em;
+}
+
+.search-item + .search-item {
+  margin-left: 4em;
+}
+
+.filter-sort-fields {
+  margin-bottom: 4em;
+}
+
+.field-title {
+  margin-right: 2em;
+  font-weight: 300;
+}
+
+.filter-field-item + .filter-field-item{
+  margin-left: 2em;
+}
+
+select {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  
+}
+
+/* Cruise cards list */
+
+.cruise-cards-list {
+  flex-wrap: wrap;
+  margin-bottom: 4em;
+}
+
+
+
+/* Cruise card */
+
+.cruise-card {
+  margin-bottom: 3em;
+  box-shadow: 0px 6px 10px 6px rgba(53, 53, 53, 0.082);
+}
+
+.cruise-content {
+  background-color: #fff;
+  color: #16697A;
+  padding: 2.4em 1.5em 3em 1.5em;
+}
+
+.cruise-ship,
+.departs,
+.arrives {
+  justify-content: flex-start;
+}
+
+.cruise-ship-label,
+.departs-label,
+.arrives-label {
+  margin-right: 1em;
+}
+
+
+.cruise-ship-label,
+.departs-label,
+.arrives-label,
+.price-label {
+  font-weight: 300;
+  font-size: 1rem;
+  color: #353535;
+  opacity: .7;
+}
+
+.cruise-ship-label {
+  margin-right: .6em;
+}
+
+.cruise-title {
+  font-size: 1.4rem;
+  margin-bottom: .4em;
+}
+
+.cruise-ship {
+  margin-bottom: 2em;
+}
+
+.cruise-ship-title {
+  font-weight: 300;
+}
+
+
+
+.departs-arrives {
+  justify-content: flex-start;
+  margin-bottom: 2em;
+}
+
+.departs-arrives-icon {
+  width: 5%;
+  margin-right: .6em;
+}
+
+.departs-title,
+.arrives-title {
+  font-weight: 500;
+}
+
+
+.departs {
+  margin-bottom: .8em;
+}
+
+.dates-field {
+  border: 1px solid rgba(53, 53, 53, 0.54);
+  margin-bottom: 3em;
+  padding: 1em;
+}
+
+.dates-field-text {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+
+.bottom-field {
+  align-items: flex-end;
+}
+
+.price-label {
+  margin-bottom: 0.2em;
+}
+
+.cruise-price .row {
+  align-items: flex-start;
+}
+
+.price-currency {
+  font-size: 1.4rem;
+  transform: translateY(-3px);
+  margin-right: .1em;
+}
+
+.price-value {
+  font-size: 3rem;
+  line-height: .8;
+}
+
+
+/* Button */
+
+.cruise-btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #FFA62B;
+  padding: 1.2em 2em 1.2em 2em;
+  transition: all 0.5s ease;
+}
+
+.cruise-btn:hover,
+.cruise-btn:focus {
+  transform: scale(.95);
+  background-color: #ee9b27;
+}
+
+.cruise-link {
+  color: #fff;
+  font-weight: 900;
+
+}
+
+
+/* Pagination */
+
+.pagination {
+  justify-content: center;
+}
+
+.page-previous,
+.page-next {
+  width: 100%;
+  max-width: 11px;
+}
+
+.page-left {
+  cursor: not-allowed;
+}
+
+.page-previous {
+  opacity: 0.3;
+}
+
+.pagination-content {
+  font-size: 1.2rem;
+}
+
+.pagination-element + .pagination-element {
+  margin-left: 1em;
+}
+
+
+
+/*********** FOOTER ***********/
+
+footer {
+  background-color: #16697A;
+  color: rgba(255, 255, 255, 0.822);
+  font-weight: 300;
+  padding: 6em 0 3em 0;
+}
+
+.footer-lists {
+  align-items: flex-start;
+  margin-bottom: 8em;
+}
+
+.footer-list-title {
+  font-weight: 300;
+  margin-bottom: 2em;
+}
+
+.footer-link + .footer-link {
+  margin-top: 1em;
+}
+
+.footer-link {
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  transform: scale(1.05);
+}
+
+.footer-link a {
+  color: rgba(255, 255, 255, 0.7);
+  
+}
+
+.footer-link a:hover {
+  color: #fff;
+
+}
+
+footer .logo-img {
+  margin: 0 auto;
+  margin-bottom: 4em;
+}
+
+.footer-social {
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+.social-link {
+  width: 20%;
+  max-width: 30px;
+  transition: all 0.2s;
+}
+
+.social-link:hover,
+.social-link:focus {
+  transform: scale(1.19);
+  /* mix-blend-mode: screen; */
+  filter: brightness(1.2);
+}
+
+.social-link + .social-link {
+  margin-left: 1em;
+}
+
+.copyright {
+  opacity: .6;
+}
+
+.copyright-text {
+  text-align: center;
+}
+
+
+
+/*********** MEDIA QUERIES ***********/
+
+/* Header */
+
+@media (max-width: 950px) {
+  .nav-link {
+    font-size: .8rem;
+  }
+
+  .burger-button {
+    cursor: pointer;
+    width: 10%;
+    max-width: 20px;
+  }
+  
+  .logo-img {
+    max-width: 80px;
+  }
+}
